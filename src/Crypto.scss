@@ -1,7 +1,7 @@
 .Crypto-container {
 	margin: 15px 0 0;
-	padding-inline: 10px;
-	width: 70vw;
+	padding-inline: 20px;
+	width: 75vw;
 	height: 7.5vh;
 	background: #fff;
 	display: flex;
@@ -13,47 +13,62 @@
 		z-index: 998;
 		background-color: #fff;
 		display: flex;
-		justify-content: space-between;
+		justify-content: start;
 		align-items: center;
 		width: 100vw;
 		height: 6vh;
 
 		.Crypto {
-			display: flex;
 			font-size: 20px;
 			font-weight: bold;
+			display: flex;
+			align-items: center;
+			padding-right: 24px;
+			min-width: 300px;
+			background: white;
 
 			img {
 				background: white;
 				height: 30px;
 				width: 30px;
+				margin-right: 10px;
 			}
 			h1 {
 				background: white;
-				font-size: 20px;
+				font-size: 16px;
+				width: 150px;
 			}
 			.Crypto-symbol {
 				background: white;
+				text-transform: uppercase;
 			}
 		}
 		.Crypto-data {
-			display: flex;
 			font-size: 20px;
 			font-weight: bold;
+			display: flex;
+			text-align: right;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			background: white;
 
 			.Crypto-price {
 				background: #fff;
+				width: 110px;
 			}
 			.Crypto-volume {
 				background: #fff;
+				width: 155px;
 			}
 
 			.Crypto-marketcap {
 				background: #fff;
+				width: 290px;
 			}
 
 			.Crypto-percent {
-				width: 100px;
+				width: 70px;
 				background: #fff;
 			}
 
