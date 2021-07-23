@@ -5,16 +5,25 @@ import Logo from "./CryptoLogo.png";
 import Crypto from "./Crypto";
 
 const App = () => {
-	const [data, setData] = useState([]);
+	const [datas, setDatas] = useState([]);
+	const [search, setSearch] = useState("");
 
 	useEffect(() => {
 		axios
 			.get(
 				"https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=false"
 			)
-			.then((res) => setData(res.data))
+			.then((res) => setDatas(res.data))
 			.catch((error) => console.log(error));
 	}, []);
+
+	const handleChange = (e) => {
+		setSearch(e.target.value);
+	};
+
+	const filterCrypto = datas.filter((data) =>
+		data.name.toLowerCase().includes(search.toLowerCase())
+	);
 
 	return (
 		<>
@@ -26,10 +35,24 @@ const App = () => {
 							type="text"
 							placeholder="Search"
 							className="Input"
+							onChange={handleChange}
 						/>
 					</form>
 				</div>
-				<Crypto />
+				{filterCrypto.map((data) => {
+					return (
+						<Crypto
+							key={data.id}
+							name={data.name}
+							price={data.current_price}
+							symbol={data.symbol}
+							marketcap={data.total_volume}
+							volume={data.market_cap}
+							image={data.image}
+							priceChange={data.price_change_percentage_24h}
+						/>
+					);
+				})}
 			</div>
 		</>
 	);
