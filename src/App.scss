@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	background-color: #f2fcfc;
+	background-color: #000;
+	font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -10,9 +11,49 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100vw;
+
+	.Search {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.Image {
+			height: 200px;
+			width: 265px;
+		}
+
+		.Input {
+			height: 40px;
+			width: 325px;
+			background: linear-gradient(115deg, #d3d3d3 0%, #2d3436 80%);
+			padding-inline: 25px;
+			color: #fff;
+			font-weight: bolder;
+			font-size: medium;
+		}
+
+		::placeholder {
+			color: #000;
+			font-weight: bolder;
+			font-size: medium;
+		}
+
+		:focus::-webkit-input-placeholder {
+			visibility: hidden;
+		}
+	}
 }
 
-.Image {
-	height: 200px;
-	width: 265px;
+.Crypto {
+	margin: 15px 0 0;
+	width: 80vw;
+	height: 7.5vh;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 35px;
 }
