@@ -1,9 +1,13 @@
-import "./App.css";
+import "./App.scss";
+import Logo from "./CryptoLogo.png";
 
 function App() {
 	return (
 		<>
-			<h1>Tracker</h1>
+			<div className="container">
+				<img className="Image" src={Logo} alt="Logo" />
+				<div>Hello</div>
+			</div>
 		</>
 	);
 }
